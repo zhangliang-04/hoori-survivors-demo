@@ -14,3 +14,5 @@
 丛雨／芳乃角色页：https://www.yuzu-soft.com/products/senren/chara.html
 
 怪物、石地、鸟居、树木、灯笼、SVG技能图标、粒子与攻击轨迹由项目代码绘制，无其他外部贴图依赖。音效为Web Audio合成，未使用原作配音或音乐。字体使用系统字体，无外部字体请求。
+
+剧情动图 `stories/ayase-blackhole.gif` 由用户提供的 `Recording 2026-09-29 001339.gif` 按时间截取而来，保留前73帧（2.92秒），删除持续白屏及其后的内容；未修改原文件。处理方式见 `docs/NARRATIVE.md`。
