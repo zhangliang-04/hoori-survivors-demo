@@ -1,0 +1,82 @@
+{
+  "latest": "0.5.0",
+  "versions": [
+    {
+      "sourceCommit": "7067f54e9d45b0ce0b10af00a38ba3583c7d31f3",
+      "builtAt": "2026-09-28T16:44:06.458Z",
+      "version": "0.2.0",
+      "publicCommit": "6644cbd73e35c08e23be3bf003bf9a2f2906601c",
+      "url": "versions/v0.2.0/"
+    },
+    {
+      "sourceCommit": "fdbc7443144aeaf487b62a42ee30c651a5ff9522",
+      "builtAt": "2026-10-01T05:49:06.299Z",
+      "version": "0.2.1",
+      "publicCommit": "2c694f751bc10b0988bcc64944600ff6ed765e89",
+      "url": "versions/v0.2.1/"
+    },
+    {
+      "sourceCommit": "2e2c6fbf4723c361858c9e73c5aba65d2faf96de",
+      "builtAt": "2026-10-01T06:45:37.793Z",
+      "version": "0.2.2",
+      "publicCommit": "d66eb2f3b54b47400cd546329fc361bc0cce0b6b",
+      "url": "versions/v0.2.2/"
+    },
+    {
+      "sourceCommit": "130bbc3be3c89a2982addec004f0ad7a2e85a413",
+      "builtAt": "2026-10-01T17:32:15.415Z",
+      "version": "0.3.0",
+      "publicCommit": "4a52c63e2445dcad27c08a27bb6b89a07154bcf9",
+      "url": "versions/v0.3.0/"
+    },
+    {
+      "sourceCommit": "a34147b0a30d1185b6aaf5b3da7933a3d9d7f979",
+      "builtAt": "2026-10-01T17:50:04.357Z",
+      "version": "0.3.1",
+      "publicCommit": "a15aaca4649af0fb9cef5856d5351457a20c7794",
+      "url": "versions/v0.3.1/"
+    },
+    {
+      "sourceCommit": "3d3c8ac673d661da71b88b81ebc0f97ee2a53725",
+      "builtAt": "2026-10-01T18:15:24.160Z",
+      "version": "0.3.2",
+      "publicCommit": "523b962500cf225ecb0974bb21f5b82d038c928e",
+      "url": "versions/v0.3.2/"
+    },
+    {
+      "sourceCommit": "ba162f62862d3f4f5593da8fe5267d9ecd77bd19",
+      "builtAt": "2026-10-02T04:48:50.567Z",
+      "version": "0.3.3",
+      "publicCommit": "ff1b3e063812e3b3d5122ab8a02958d2fd1df02d",
+      "url": "versions/v0.3.3/"
+    },
+    {
+      "sourceCommit": "dc6523af35cb3d2cba2e85b67c2e5731ae542ace",
+      "builtAt": "2026-10-07T08:23:17.321Z",
+      "version": "0.3.4",
+      "publicCommit": "945319b5126e16e59688dd347f1e8850f0bba76a",
+      "url": "versions/v0.3.4/"
+    },
+    {
+      "version": "0.4.0",
+      "sourceCommit": "1ca4e4517042509e3f32cf78a5c6ed991afe4f8a",
+      "builtAt": "2026-10-07T12:01:11.564Z",
+      "publicCommit": "aa3e99139cfbdb046a819295ef39334cf3f8ac80",
+      "url": "versions/v0.4.0/"
+    },
+    {
+      "version": "0.4.1",
+      "sourceCommit": "07279ed1b8efb33b399df4ef7512787b27018c6a",
+      "builtAt": "2026-10-07T17:33:50.444Z",
+      "publicCommit": "0b7e69c9d6f6aa661d5bbf4b0f0e325f3cef7d95",
+      "url": "versions/v0.4.1/"
+    },
+    {
+      "version": "0.5.0",
+      "sourceCommit": "94cd0e841e6f28c3e3d98b054f137fe457265978",
+      "builtAt": "2026-10-09T17:36:54.159Z",
+      "publicCommit": "bdba3fb471043abb15ca554c3300c06de7606b9a",
+      "url": "versions/v0.5.0/"
+    }
+  ]
+}
