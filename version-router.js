@@ -1,8 +1,8 @@
-const versions = ["0.2.0","0.2.1","0.2.2","0.3.0","0.3.1","0.3.2","0.3.3","0.3.4","0.4.0","0.4.1","0.5.0","0.6.0"];
+const versions = ["0.2.0","0.2.1","0.2.2","0.3.0","0.3.1","0.3.2","0.3.3","0.3.4","0.4.0","0.4.1","0.5.0","0.6.0","0.6.1"];
 const url = new URL(location.href);
 const requested = url.searchParams.get("version");
 if (!requested || requested === "latest") {
-  await import("./assets/index-Dtu_wyMT.js");
+  await import("./assets/index-B7cPfy1Y.js");
 } else {
   const version = requested.replace(/^v/, "");
   if (versions.includes(version)) {
