@@ -9,6 +9,10 @@
 | murasame.png | 丛雨 | https://www.yuzu-soft.com/products/senren/images/chara/chara03/cos01.png （用户提供） |
 | yoshino.png | 朝武芳乃 | https://www.yuzu-soft.com/products/senren/images/chara/chara01/cos01.png |
 | nene.png | 绫地宁宁（魔女服） | https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara01_pic01.png |
+| nene-school.png | 绫地宁宁（校服） | https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara01_pic02.png |
+| nanao.jpg | 相马七绪（官方人物介绍原图，1000×750，含背景） | https://www.yuzu-soft.com/products/sothewitch/images/character/sub_chara_bg02.jpg |
+
+相马七绪来源页：https://www.yuzu-soft.com/products/sothewitch/character_sub.html 。原图同时包含全身立绘与半身近景；剧情头像通过 CSS 取右侧近景，不是透明背景立绘，未改动原图。
 
 绫濑／七海角色页：https://www.yuzu-soft.com/products/riddle/character.html
 
