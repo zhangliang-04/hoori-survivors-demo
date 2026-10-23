@@ -31,3 +31,17 @@
 ## 桌角道具
 
 `props/nene-table-corner.png`：用户于2026-10-12确认的独立木质桌角道具，1254×1254 RGBA PNG，由内置imagegen绘制并迭代为三角桌面、短桌腿和清水水渍。不是原作或同人插画的截取素材。与本地确认稿 `art/references/nene/table/table-corner-concept-v4.png` 字节一致；完整生成提示词见同目录 `table-corner-concept-v4.txt`。
+
+## 因幡巡
+
+`meguru.png`：官方校服立绘，1000×750，原文件未修改。来源：https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara02_pic01.png 。角色页：https://www.yuzu-soft.com/products/sothewitch/character.html 。战斗与头像仅在显示时裁切。
+
+`stories/meguru-poyayan.webp`：原作“啵央央”SD画面，来自剧情整理 https://www.bilibili.com/opus/721254309166055472 中的截图 https://i0.hdslb.com/bfs/article/8ec835dc7528f903acf51b698060c641202d6bae.png 。仅转为 WebP，保留原尺寸与画面，用于首次技能小剧场。角色及原作图像版权归 YUZUSOFT / JUNOS inc. 所有。
+
+`props/meguru-poyayan.webp`：以上SD画面的 imagegen 辅助透明抠图，保留原图可见的头发、表情和上半身，去除背景和左侧人物。1254×1254，保留透明通道，仅转换为WebP，用于技能图标及发动时的SD演出；不是新增原作素材。
+
+## 立绘白边清理（2026-10-24）
+
+`meguru-no-halo.png`、`nene-school-no-halo.png`、`nene-no-halo.png`：直接从官方原PNG处理，使用 `scripts/remove-portrait-halo.cjs` 清除半透明近白色光晕像素的alpha。保留1000×750画布、全部原始RGB通道及所有完全不透明像素，不重绘、不缩放；沿用原有裁切框。脚本逐像素验证RGB改动数与不透明像素改动数均为0。
+
+先前imagegen去白边版本会改变人物细节，已停用并移出运行素材目录；运行时仅引用以上原图透明通道处理版本。
