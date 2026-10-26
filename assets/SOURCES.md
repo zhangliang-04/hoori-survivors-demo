@@ -1,47 +1,54 @@
-# 素材来源
+# 运行素材与来源
 
-官方角色素材 © YUZUSOFT / JUNOS inc.，版权归原权利人所有。本地同人机制Demo不表示获得了再分发或商业授权；若公开发布，请确认相关许可，或替换为有授权的SD素材。以下PNG保持下载原文件，显示裁切仅发生在CSS／Phaser纹理帧中。
+角色及原作图像 © YUZUSOFT / JUNOS inc.；其他素材按下表记录来源。角色外观和裁切统一配置在 `src/content/appearances.ts`，技能图标入口为 `src/ui/icons.ts`。
 
-| 本地文件 | 角色 | 来源 |
-|---|---|---|
-| ayase.png | 三司绫濑 | https://www.yuzu-soft.com/products/riddle/images/character/chara01/cos01.png |
-| nanami.png | 在原七海 | https://www.yuzu-soft.com/products/riddle/images/character/chara02/cos01.png |
-| murasame.png | 丛雨 | https://www.yuzu-soft.com/products/senren/images/chara/chara03/cos01.png （用户提供） |
-| yoshino.png | 朝武芳乃 | https://www.yuzu-soft.com/products/senren/images/chara/chara01/cos01.png |
-| nene.png | 绫地宁宁（魔女服） | https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara01_pic01.png |
-| nene-school.png | 绫地宁宁（校服） | https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara01_pic02.png |
-| nanao.jpg | 相马七绪（官方人物介绍原图，1000×750，含背景） | https://www.yuzu-soft.com/products/sothewitch/images/character/sub_chara_bg02.jpg |
+## 角色立绘
 
-相马七绪来源页：https://www.yuzu-soft.com/products/sothewitch/character_sub.html 。原图同时包含全身立绘与半身近景；剧情头像通过 CSS 取右侧近景，不是透明背景立绘，未改动原图。
+| 运行文件                  | 原始文件          | 来源                                                                                                        |
+| ------------------------- | ----------------- | ----------------------------------------------------------------------------------------------------------- |
+| `ayase.png`               | 同名              | [绫濑官方图片](https://www.yuzu-soft.com/products/riddle/images/character/chara01/cos01.png)                |
+| `nanami.png`              | 同名              | [七海官方图片](https://www.yuzu-soft.com/products/riddle/images/character/chara02/cos01.png)                |
+| `murasame.png`            | 同名              | [丛雨官方图片](https://www.yuzu-soft.com/products/senren/images/chara/chara03/cos01.png)                    |
+| `nene-no-halo.png`        | `nene.png`        | [宁宁魔女服官方图片](https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara01_pic01.png) |
+| `nene-school-no-halo.png` | `nene-school.png` | [宁宁校服官方图片](https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara01_pic02.png)   |
+| `meguru-no-halo.png`      | `meguru.png`      | [巡官方图片](https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara02_pic01.png)         |
+| `nanao.jpg`               | 同名              | [相马七绪官方人物图](https://www.yuzu-soft.com/products/sothewitch/images/character/sub_chara_bg02.jpg)     |
 
-绫濑／七海角色页：https://www.yuzu-soft.com/products/riddle/character.html
+另保留 `yoshino.png`，来源为 [芳乃官方图片](https://www.yuzu-soft.com/products/senren/images/chara/chara01/cos01.png)。七绪图片含背景与两处人物构图，使用配置的帧和头像裁切。
 
-丛雨／芳乃角色页：https://www.yuzu-soft.com/products/senren/chara.html
+宁宁与巡的运行PNG由 `scripts/remove-portrait-halo.cjs` 处理原始透明通道：保持1000×750画布、全部RGB及不透明像素，清除半透明近白色光晕。脚本依赖 `sharp`，可通过 `HOORI_SHARP_MODULE` 指定已有模块路径；不属于运行时依赖。
 
-怪物、石地、鸟居、树木、灯笼、SVG技能图标、粒子与攻击轨迹由项目代码绘制，无其他外部贴图依赖。音效为Web Audio合成，未使用原作配音或音乐。字体使用系统字体，无外部字体请求。
+## 剧情媒体
 
-剧情动图 `stories/ayase-blackhole.gif` 由用户提供的 `Recording 2026-09-29 001339.gif` 按时间截取而来，保留前73帧（2.92秒），删除持续白屏及其后的内容；未修改原文件。处理方式见 `docs/NARRATIVE.md`。
+| 文件                                                         | 来源／处理                                                                                                                                                                        |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `stories/ayase-shield-panic.webp`、`ayase-shield-angry.webp` | 用户提供的破盾剧情配图，转换为WebP                                                                                                                                                |
+| `stories/ayase-blackhole.mp4`                                | 用户提供的 `Recording 2026-09-29 001339.gif` 中黑洞演出片段，转换为视频                                                                                                           |
+| `stories/nanami-dumpling-fast.webm`                          | 用户提供的 `nanami_dumpling.gif`，加速转换为循环演出视频                                                                                                                          |
+| `stories/meguru-poyayan.webp`                                | [原作SD截图整理](https://www.bilibili.com/opus/721254309166055472) 中的 [图片](https://i0.hdslb.com/bfs/article/8ec835dc7528f903acf51b698060c641202d6bae.png)，保留尺寸转换为WebP |
 
-## 宁宁起爆器
+实际引用以源码仓库的 `src/content/stories.ts` 为准，循环、推进和异步加载由 `src/ui/narrative-view.ts`、`src/ui/story-media.ts` 管理。
 
-`props/nene-detonator.png`：用户于 2026-10-12 确认采用的起爆器素材，1430×1100 RGBA PNG。参考《魔女的夜宴》Chapter 3-6 地上道具画面，来源为[视频约 00:10](https://www.bilibili.com/video/BV1EGsdezENf/?t=10)。从截图裁出 52×40 区域后，通过内置 imagegen 增强并去除背景；属于 AI 辅助修复素材，不是官方高清原图。原作图像版权归相应权利人所有。
+## 道具与技能图标
 
-本地制作记录：`art/references/nene/detonator-enhanced-transparent.md`；确认稿：`art/references/nene/detonator-enhanced-transparent.png`。正式素材与确认稿字节一致，用于宁宁起爆器的部署和地面显示。
+- `props/nene-detonator.png`：1430×1100透明PNG，基于 [原作切片约00:10](https://www.bilibili.com/video/BV1EGsdezENf/?t=10) 的起爆器画面，经AI辅助放大与透明处理。用于部署、地面装置和爆炸前表现。
+- `props/nene-table-corner.png`：1254×1254透明PNG，AI生成的木质桌角道具，用于持续水渍技能。
+- `props/meguru-poyayan.webp`：1254×1254透明图，由上述巡SD截图经AI辅助抠图获得。保留可见发型、表情与上半身，技能图标和发动演出共用。
+- 起爆器图标使用 `art/references/nene/detonator-skill-icon-original.svg`；其他矢量图标由 `src/ui/icons.ts` 定义。
 
-## 桌角道具
+## 战斗演出与语音
 
-`props/nene-table-corner.png`：用户于2026-10-12确认的独立木质桌角道具，1254×1254 RGBA PNG，由内置imagegen绘制并迭代为三角桌面、短桌腿和清水水渍。不是原作或同人插画的截取素材。与本地确认稿 `art/references/nene/table/table-corner-concept-v4.png` 字节一致；完整生成提示词见同目录 `table-corner-concept-v4.txt`。
+| 文件                             | 来源与用途                                                                                                                                                                                                                           |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `cameos/nanami-dumpling.webp`    | 从上述打饺视频截取七海所在左侧画面，10帧横向图集（每帧330×390）；战斗出手时循环显示                                                                                                                                                  |
+| `cameos/nene-secret-weapon.webp` | [起爆器掉落原作片段](https://www.bilibili.com/video/BV1EGsdezENf/)约00:10的SD宁宁，手工描边透明裁切；部署秘密武器时显示                                                                                                              |
+| `cameos/ayase-unmasked.webp`     | 从已有破盾生气图片裁切脸部；破盾强化时短暂显示                                                                                                                                                                                       |
+| `voices/meguru-ciallo.mp3`       | [bestZwei/ciallo-de 的流传语音素材](https://github.com/bestZwei/ciallo-de/blob/master/public/meguru.aac)，约1.2秒的Ciallo；AAC转单声道64kbps MP3。识别到的内容为Ciallo招呼；仓库未给出原作语音文件编号，因此不标注为已核实的解包原档 |
 
-## 因幡巡
+图片处理脚本为 `scripts/prepare-combat-cameos.py`，保留原画像素与人物比例，不重绘；运行需要Pillow、FFmpeg及本地 `art/references/nene/drop-10s.png` 原帧。语音与原作图像权利仍属于相应权利人。`voices/murasame-kagome.mp3` 截自[好姐妹梨安整理的丛雨《笼中鸟》字幕片段](https://www.bilibili.com/video/BV1aG4y1k7ux/)00:00–00:06.35，结尾0.25秒淡出、单声道64kbps；00:02画面对应“かごめ かごめ”，`cameos/murasame-song.webp` 取该帧(390,45)–(640,240)的SD区域。字幕和角色画面已核对，属于原作切片来源，未取得原作语音文件编号。七海治愈之风的准确原声片段尚待确认，未用仿声替代。
 
-`meguru.png`：官方校服立绘，1000×750，原文件未修改。来源：https://www.yuzu-soft.com/products/sothewitch/images/character/main_chara02_pic01.png 。角色页：https://www.yuzu-soft.com/products/sothewitch/character.html 。战斗与头像仅在显示时裁切。
+怪物、地形装饰、粒子与其余攻击轨迹由代码绘制；打击音效由Web Audio合成，字体采用系统字体。
 
-`stories/meguru-poyayan.webp`：原作“啵央央”SD画面，来自剧情整理 https://www.bilibili.com/opus/721254309166055472 中的截图 https://i0.hdslb.com/bfs/article/8ec835dc7528f903acf51b698060c641202d6bae.png 。仅转为 WebP，保留原尺寸与画面，用于首次技能小剧场。角色及原作图像版权归 YUZUSOFT / JUNOS inc. 所有。
+## 素材维护
 
-`props/meguru-poyayan.webp`：以上SD画面的 imagegen 辅助透明抠图，保留原图可见的头发、表情和上半身，去除背景和左侧人物。1254×1254，保留透明通道，仅转换为WebP，用于技能图标及发动时的SD演出；不是新增原作素材。
-
-## 立绘白边清理（2026-10-24）
-
-`meguru-no-halo.png`、`nene-school-no-halo.png`、`nene-no-halo.png`：直接从官方原PNG处理，使用 `scripts/remove-portrait-halo.cjs` 清除半透明近白色光晕像素的alpha。保留1000×750画布、全部原始RGB通道及所有完全不透明像素，不重绘、不缩放；沿用原有裁切框。脚本逐像素验证RGB改动数与不透明像素改动数均为0。
-
-先前imagegen去白边版本会改变人物细节，已停用并移出运行素材目录；运行时仅引用以上原图透明通道处理版本。
+保留原始文件及来源。清理现有立绘时保持人物像素和比例，使用裁切或透明通道处理；替换素材后同时检查首页、头像、剧情和战斗的显示框。运行资产放在 `public/assets/`；研究稿、截图与制作中间文件放在 `art/`。

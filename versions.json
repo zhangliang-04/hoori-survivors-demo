@@ -1,5 +1,5 @@
 {
-  "latest": "0.7.4",
+  "latest": "0.7.5",
   "versions": [
     {
       "sourceCommit": "7067f54e9d45b0ce0b10af00a38ba3583c7d31f3",
@@ -124,7 +124,14 @@
       "version": "0.7.4",
       "sourceCommit": "59c3a3f42358ca85eb6c9dfe696c31f56ead460b",
       "builtAt": "2026-10-23T18:24:31.905Z",
+      "publicCommit": "fd0dd6725913f7d7645a3aec9847ba8ee18c9668",
       "url": "versions/v0.7.4/"
+    },
+    {
+      "version": "0.7.5",
+      "sourceCommit": "17ab28f92c6fed0d77663cbd3617e1e6ccfb10bb",
+      "builtAt": "2026-10-26T17:06:44.364Z",
+      "url": "versions/v0.7.5/"
     }
   ]
 }

@@ -1,11 +1,27 @@
 # 穗织异闻 · 祟影
 
-[打开最新版](https://zhangliang-04.github.io/hoori-survivors-demo/)
+柚子社角色同人生存游戏。选择喜欢的角色来到穗织，在五分钟怪潮中收集经验、升级技能、招募助战，最后迎战祟神。
 
-指定版本：在地址后添加 `?version=v0.4.1`，也可直接访问 `versions/v0.4.1/`。各版本 Release 附有固定试玩入口。历史版本保留首次归档的构建，不被日常部署覆盖。
+**[在线试玩](https://zhangliang-04.github.io/hoori-survivors-demo/)** · [v0.7.5 固定版本](https://zhangliang-04.github.io/hoori-survivors-demo/versions/v0.7.5/) · [本版说明](https://github.com/zhangliang-04/hoori-survivors-demo/releases/tag/v0.7.5)
 
-本仓库保存自动生成的试玩网页、历史构建和发布工具。游戏源代码在私有仓库维护，请勿直接修改生成文件。
+## 怎么玩
 
-WASD / 方向键移动，技能自动释放，升级时三选一，Esc 暂停。
+- 可选择三司绫濑、绫地宁宁、因幡巡、在原七海、丛雨作为自机。
+- WASD／方向键移动，技能自动释放；触屏可拖动移动。
+- 拾取经验升级技能，击败藏宝祟影后靠近宝箱选择角色道具或通用宝物。
+- 获得其他角色的技能即可邀请她助战，组合技能形成连携与角色共鸣。
+- 普通介绍以顶部短对白播放，重要剧情以战场半身立绘呈现；图鉴可回看已解锁台词。
+- Esc 暂停，图鉴查看技能与物品。选卡、立绘剧场与暂停期间不计战斗时间。
+- 生存五分钟后迎战祟神，击败祟神获胜。
 
-角色素材版权归 YUZUSOFT / JUNOS inc. 所有，来源见 [assets/SOURCES.md](assets/SOURCES.md)。
+以电脑横屏体验为主。
+
+## 历史版本
+
+[全部版本与更新说明](https://github.com/zhangliang-04/hoori-survivors-demo/releases) 中附有各版本固定试玩入口，也可以在试玩地址后使用 `?version=v版本号` 选择版本。固定版本保留对应构建，默认入口提供最新版本。
+
+## 关于本仓库
+
+本仓库保存自动发布的试玩页面、资源、历史版本和发布说明。开发在源码仓库进行，通过自动测试与构建后同步到这里。
+
+角色及原作素材版权归对应权利人所有。来源与处理方式见 [素材清单](assets/SOURCES.md)。
