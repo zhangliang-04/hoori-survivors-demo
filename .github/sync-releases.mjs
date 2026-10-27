@@ -16,7 +16,7 @@ const notesRoot = join(root, source ? "docs/releases" : "release-notes");
 const latest = JSON.parse(
   readFileSync(join(root, source ? "package.json" : "versions.json"), "utf8"),
 )[source ? "version" : "latest"];
-const stable = (version) => /^\d+\.\d+\.\d+$/.test(version);
+const stable = (version) => /^\d+\.\d+\.\d+(?:\.\d+)?$/.test(version);
 if (!stable(latest)) throw new Error("Invalid latest version");
 const git = (...args) => execFileSync("git", args, { encoding: "utf8" }).trim();
 const gh = (...args) =>
@@ -27,7 +27,8 @@ const gh = (...args) =>
 const compare = (a, b) => {
   const x = a.version.split(".").map(Number),
     y = b.version.split(".").map(Number);
-  for (let i = 0; i < 3; i++) if (x[i] !== y[i]) return x[i] - y[i];
+  for (let i = 0; i < 4; i++)
+    if ((x[i] ?? 0) !== (y[i] ?? 0)) return (x[i] ?? 0) - (y[i] ?? 0);
   return 0;
 };
 const records = source

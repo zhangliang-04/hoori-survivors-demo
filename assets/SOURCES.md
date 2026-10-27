@@ -40,15 +40,21 @@
 
 | 文件                             | 来源与用途                                                                                                                                                                                                                           |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `cameos/nanami-dumpling.webp`    | 从上述打饺视频截取七海所在左侧画面，10帧横向图集（每帧330×390）；战斗出手时循环显示                                                                                                                                                  |
+| `cameos/nanami-dumpling.webp`    | 从上述打饺视频截取七海所在左侧画面，逐帧轮廓裁切，保留七海、擀面杖和案板；10帧透明横向图集（每帧380×462），战斗出手时循环显示                                                                                                                                                  |
 | `cameos/nene-secret-weapon.webp` | [起爆器掉落原作片段](https://www.bilibili.com/video/BV1EGsdezENf/)约00:10的SD宁宁，手工描边透明裁切；部署秘密武器时显示                                                                                                              |
 | `cameos/ayase-unmasked.webp`     | 从已有破盾生气图片裁切脸部；破盾强化时短暂显示                                                                                                                                                                                       |
 | `voices/meguru-ciallo.mp3`       | [bestZwei/ciallo-de 的流传语音素材](https://github.com/bestZwei/ciallo-de/blob/master/public/meguru.aac)，约1.2秒的Ciallo；AAC转单声道64kbps MP3。识别到的内容为Ciallo招呼；仓库未给出原作语音文件编号，因此不标注为已核实的解包原档 |
 
-图片处理脚本为 `scripts/prepare-combat-cameos.py`，保留原画像素与人物比例，不重绘；运行需要Pillow、FFmpeg及本地 `art/references/nene/drop-10s.png` 原帧。语音与原作图像权利仍属于相应权利人。`voices/murasame-kagome.mp3` 截自[好姐妹梨安整理的丛雨《笼中鸟》字幕片段](https://www.bilibili.com/video/BV1aG4y1k7ux/)00:00–00:06.35，结尾0.25秒淡出、单声道64kbps；00:02画面对应“かごめ かごめ”，`cameos/murasame-song.webp` 取该帧(390,45)–(640,240)的SD区域。字幕和角色画面已核对，属于原作切片来源，未取得原作语音文件编号。七海治愈之风的准确原声片段尚待确认，未用仿声替代。
+图片处理脚本为 `scripts/prepare-combat-cameos.py`，保留原画像素与人物比例，不重绘；运行需要Pillow、FFmpeg及本地 `art/references/nene/drop-10s.png` 原帧。语音与原作图像权利仍属于相应权利人。`voices/murasame-kagome.mp3` 截自[好姐妹梨安整理的丛雨《笼中鸟》字幕片段](https://www.bilibili.com/video/BV1aG4y1k7ux/)00:00–00:06.35，结尾0.25秒淡出、单声道64kbps；00:02画面对应“かごめ かごめ”，`cameos/murasame-song.webp` 取该帧(390,45)–(640,240)的SD区域。字幕和角色画面已核对，属于原作切片来源，未取得原作语音文件编号。
 
 怪物、地形装饰、粒子与其余攻击轨迹由代码绘制；打击音效由Web Audio合成，字体采用系统字体。
+
+七海「治愈之风」语音：
+- 文件：`voices/nanami-healing-wind.mp3`；来源：[用户指定的原声片段](https://www.bilibili.com/video/BV1BS4y187YJ/)，12:26.5–12:28.6，约2.1秒。
+- FFmpeg处理：80Hz高通、`afftdn=nr=6:nf=-40:tn=1`轻度降噪、末尾60ms淡出，单声道44.1kHz／128kbps MP3。当前为视频音轨切片，取得解包原声后可替换同名资源。
 
 ## 素材维护
 
 保留原始文件及来源。清理现有立绘时保持人物像素和比例，使用裁切或透明通道处理；替换素材后同时检查首页、头像、剧情和战斗的显示框。运行资产放在 `public/assets/`；研究稿、截图与制作中间文件放在 `art/`。
+
+`stories/nanami-dumpling-cutout.webm` 与战斗图集使用相同透明帧，50fps循环；由 `scripts/prepare-nanami-dumpling.py` 从原视频生成。各姿势共用固定画布，拍案文字覆盖处使用同姿势的干净原帧，保留原画像素与比例。
