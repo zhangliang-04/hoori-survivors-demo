@@ -18,6 +18,22 @@
 
 宁宁与巡的运行PNG由 `scripts/remove-portrait-halo.cjs` 处理原始透明通道：保持1000×750画布、全部RGB及不透明像素，清除半透明近白色光晕。脚本依赖 `sharp`，可通过 `HOORI_SHARP_MODULE` 指定已有模块路径；不属于运行时依赖。
 
+## 剧情高清立绘
+
+小剧场立绘由 `STORY_PORTRAITS` 配置，独立于战斗与头像素材。原图保存在 `art/references/portraits-hd/`；`scripts/prepare-story-portraits.py` 仅裁除透明空白并转为无损 WebP。半身原图使用虚拟全身高度保持人物比例。开局后异步预加载，不阻塞战斗。
+
+| 剧情立绘 | 原图尺寸 | 来源 |
+| --- | --- | --- |
+| `portraits/nene-school.webp` | 1179×1920 | [萌娘共享·宁宁校服](https://commons.moegirl.icu/File:Ayachi_Nene.png) |
+| `portraits/nene-witch.webp` | 1179×1920 | [萌娘共享·宁宁魔女服](https://commons.moegirl.icu/File:Ayachi_Nene_Majo_costume.png) |
+| `portraits/murasame.webp` | 832×1280 | [萌娘共享·丛雨A10微笑](https://commons.moegirl.icu/File:千恋万花_丛雨A10_微笑.png) |
+| `portraits/meguru.webp` | 734×2263 | [萌娘图片库·因幡巡立绘](https://box.moegirl.icu/media/因幡巡立绘.png) |
+| `portraits/nanao.webp` | 685×2357 | [萌娘图片库·相马七绪立绘](https://box.moegirl.icu/media/相马七绪立绘.png) |
+| `portraits/ayase.webp` | 1288×3450 | [被玩坏的吉米·Riddle Joker立绘cg解包资源](https://www.bilibili.com/opus/700999552581238787)，[透明原图](https://i0.hdslb.com/bfs/article/8b1528b35b02bb96ccde030c345b18e52a9d737f.png) |
+| `portraits/nanami.webp` | 1084×3237 | 同上专栏，[透明原图](https://i0.hdslb.com/bfs/article/337a65d0d2b8c18ce1c374298c5ea0fbe16c5070.png) |
+
+上述为社区保存的原作人物图，版权仍归原权利人。绫濑与七海采用专栏附图的原始PNG（不带缩略图参数）；社区是否曾进行放大处理未得到独立验证。
+
 ## 剧情媒体
 
 | 文件                                                         | 来源／处理                                                                                                                                                                        |
@@ -45,7 +61,9 @@
 | `cameos/ayase-unmasked.webp`     | 从已有破盾生气图片裁切脸部；破盾强化时短暂显示                                                                                                                                                                                       |
 | `voices/meguru-ciallo.mp3`       | [bestZwei/ciallo-de 的流传语音素材](https://github.com/bestZwei/ciallo-de/blob/master/public/meguru.aac)，约1.2秒的Ciallo；AAC转单声道64kbps MP3。识别到的内容为Ciallo招呼；仓库未给出原作语音文件编号，因此不标注为已核实的解包原档 |
 
-图片处理脚本为 `scripts/prepare-combat-cameos.py`，保留原画像素与人物比例，不重绘；运行需要Pillow、FFmpeg及本地 `art/references/nene/drop-10s.png` 原帧。语音与原作图像权利仍属于相应权利人。`voices/murasame-kagome.mp3` 截自[好姐妹梨安整理的丛雨《笼中鸟》字幕片段](https://www.bilibili.com/video/BV1aG4y1k7ux/)00:00–00:06.35，结尾0.25秒淡出、单声道64kbps；00:02画面对应“かごめ かごめ”，`cameos/murasame-song.webp` 取该帧(390,45)–(640,240)的SD区域。字幕和角色画面已核对，属于原作切片来源，未取得原作语音文件编号。
+图片处理脚本为 `scripts/prepare-combat-cameos.py`，保留原画像素与人物比例，不重绘；运行需要Pillow、FFmpeg及本地 `art/references/nene/drop-10s.png` 原帧。语音与原作图像权利仍属于相应权利人。
+
+`cameos/murasame-song.webp` 来自[丛雨唱歌切片](https://www.bilibili.com/video/BV1aG4y1k7ux/)00:02的SD区域，姿势与[柚子百科计划0903·丛雨](https://www.bilibili.com/opus/745003799004839968)中“丛雨唱歌”的CG一致。由 `scripts/prepare-murasame-song.py` 按原图曲线轮廓以8倍子像素覆盖率制作透明通道，镂空飘带、发束与衣服间隙，仅保留丛雨本人；保留原始250×195尺寸和全部RGB像素，游戏显示102×80，未重绘或超分。
 
 怪物、地形装饰、粒子与其余攻击轨迹由代码绘制；打击音效由Web Audio合成，字体采用系统字体。
 
